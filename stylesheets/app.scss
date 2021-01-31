@@ -8,12 +8,11 @@ body {
     position: relative;
     font-family: "Open Sans", sans-serif;
     font-style: italic;
-    height: 800vh;
     background: #070606;
     overflow-x: hidden;
     color: #fff;
     max-width: 900px;
-    margin: 10vh auto;
+    margin: 0 auto;
 }
 a {
     text-decoration: none;
@@ -82,8 +81,10 @@ nav {
 .header {
     position: relative;
     height: 100vh;
-    max-width: 900px;
-    margin: 10vh auto;
+
+    padding-top: 10vh;
+    padding-bottom: 100vh;
+    border-bottom: 1px solid #fff;
     .heading {
         text-transform: uppercase;
         color: #fff;
@@ -110,7 +111,6 @@ nav {
     .responsive {
         width: 100%;
         position: absolute;
-        top: 25%;
         z-index: -1;
         max-width: 700px;
         min-width: 300px;
@@ -123,45 +123,58 @@ nav {
         }
         .responsive {
             top: 30%;
+            padding-top: 25vh;
         }
-    }
-}
-
-.section-2 {
-    padding-top: 2rem;
-    margin-left: 50%;
-
-    .title {
-        text-transform: uppercase;
-        font-size: calc(27px + 2vh);
-        margin-bottom: 3rem;
-    }
-    .subtitle {
-        font-style: normal;
-        font-size: calc(12px + 2vh);
-        margin-bottom: 1.5rem;
-    }
-    p {
-        font-style: normal;
-        opacity: 0.7;
-    }
-    .cta {
-        display: inline-block;
-        text-transform: uppercase;
-        font-style: normal;
-        font-weight: 700;
-        margin: 1rem 0;
-        padding: 14px 25px;
-        font-size: 14px;
-        border: 1px solid #fff;
     }
     @media screen and (max-width: 900px) {
         margin-left: 0;
         margin: 0 5vh;
     }
 }
+
+.section-2 {
+    position: relative;
+    padding: 10vh 0;
+    border-bottom: 1px solid #fff;
+    .wrapper {
+        margin-left: 50%;
+
+        .title {
+            text-transform: uppercase;
+            font-size: calc(27px + 2vh);
+            margin-bottom: 3rem;
+        }
+        .subtitle {
+            font-style: normal;
+            font-size: calc(12px + 2vh);
+            margin-bottom: 1.5rem;
+        }
+        p {
+            font-style: normal;
+            opacity: 0.7;
+        }
+        .cta {
+            display: inline-block;
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: 700;
+            margin: 1rem 0;
+            padding: 14px 25px;
+            font-size: 14px;
+            border: 1px solid #fff;
+        }
+        @media screen and (max-width: 900px) {
+            margin-left: 0;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        margin: 0 5vh;
+    }
+}
 .section-3 {
-    padding-top: 10vh;
+    padding: 10vh 0;
+    border-bottom: 1px solid #fff;
+
     .title {
         text-align: center;
         text-transform: uppercase;
@@ -212,7 +225,7 @@ nav {
 }
 
 .section-4 {
-    padding-top: 10vh;
+    padding: 10vh 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -279,6 +292,7 @@ nav {
         justify-content: space-between;
         flex-wrap: wrap;
         margin: 2rem 0;
+
         &:first-child {
             margin-bottom: 0;
         }
@@ -292,6 +306,9 @@ nav {
             height: auto;
             margin-bottom: 2vh;
         }
+        .text {
+            padding: 2vh 0;
+        }
         .article-title {
             font-style: normal;
             max-width: 400px;
@@ -303,10 +320,140 @@ nav {
                 opacity: 1;
                 transition: all 0.5s;
             }
+            .text {
+                border-top: 1px solid red;
+                border-bottom: 1px solid red;
+            }
         }
     }
     @media screen and (max-width: 900px) {
         margin-left: 0;
         margin: 0 5vh;
     }
+}
+
+.links {
+    padding: 10vh 0;
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .left {
+        .title {
+            text-transform: uppercase;
+            margin-bottom: 15vh;
+        }
+        .social-links {
+            display: flex;
+
+            a {
+                margin-right: 10px;
+                opacity: 0.7;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .middle {
+        display: flex;
+        flex-direction: column;
+
+        text-transform: uppercase;
+        font-style: normal;
+
+        margin-bottom: 5vh;
+        a {
+            margin-bottom: 10px;
+            opacity: 0.7;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    .right {
+        max-width: 400px;
+        .subtitle {
+            font-style: normal;
+            font-size: calc(12px + 2vh);
+            margin-bottom: 1.5rem;
+        }
+        .text {
+            font-style: normal;
+            opacity: 0.7;
+            margin-bottom: 7vh;
+        }
+        .form-grp {
+            max-width: 400px;
+            border-bottom: 1px solid #fff;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2vh;
+            input[type="email"] {
+                background: transparent;
+                border: none;
+                color: #fff;
+                outline: none;
+                &::placeholder {
+                    text-transform: uppercase;
+                }
+            }
+            button {
+                border: none;
+                background: transparent;
+                color: #fff;
+                font-weight: 600;
+                font-size: 1.05rem;
+                text-transform: uppercase;
+            }
+        }
+        .checkbox {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            #checkb {
+                width: 20px;
+                height: 20px;
+                outline: none;
+
+                cursor: pointer;
+                background: rgba(40, 40, 40, 0.2);
+                color: black;
+
+                appearance: none;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 4px;
+                position: relative;
+            }
+
+            #checkb:checked {
+                background: rgba(40, 40, 40, 0.7);
+            }
+
+            .checkbox {
+                position: absolute;
+                display: inline-block;
+                margin: 20px;
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+            }
+            p {
+                max-width: 360px;
+                font-style: normal;
+                opacity: 0.7;
+            }
+        }
+    }
+    @media screen and (max-width: 900px) {
+        margin-left: 0;
+        margin: 0 5vh;
+    }
+}
+
+.credit {
+    opacity: 0.7;
+    padding: 5vh 0;
+
+    font-style: normal;
 }

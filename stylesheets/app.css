@@ -10,12 +10,11 @@ body {
   position: relative;
   font-family: "Open Sans", sans-serif;
   font-style: italic;
-  height: 800vh;
   background: #070606;
   overflow-x: hidden;
   color: #fff;
   max-width: 900px;
-  margin: 10vh auto;
+  margin: 0 auto;
 }
 
 a {
@@ -111,8 +110,9 @@ nav .nav-links a:hover {
 .header {
   position: relative;
   height: 100vh;
-  max-width: 900px;
-  margin: 10vh auto;
+  padding-top: 10vh;
+  padding-bottom: 100vh;
+  border-bottom: 1px solid #fff;
 }
 
 .header .heading {
@@ -144,7 +144,6 @@ nav .nav-links a:hover {
 .header .responsive {
   width: 100%;
   position: absolute;
-  top: 25%;
   z-index: -1;
   max-width: 700px;
   min-width: 300px;
@@ -159,32 +158,45 @@ nav .nav-links a:hover {
   }
   .header .responsive {
     top: 30%;
+    padding-top: 25vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    margin-left: 0;
+    margin: 0 5vh;
   }
 }
 
 .section-2 {
-  padding-top: 2rem;
+  position: relative;
+  padding: 10vh 0;
+  border-bottom: 1px solid #fff;
+}
+
+.section-2 .wrapper {
   margin-left: 50%;
 }
 
-.section-2 .title {
+.section-2 .wrapper .title {
   text-transform: uppercase;
   font-size: calc(27px + 2vh);
   margin-bottom: 3rem;
 }
 
-.section-2 .subtitle {
+.section-2 .wrapper .subtitle {
   font-style: normal;
   font-size: calc(12px + 2vh);
   margin-bottom: 1.5rem;
 }
 
-.section-2 p {
+.section-2 .wrapper p {
   font-style: normal;
   opacity: 0.7;
 }
 
-.section-2 .cta {
+.section-2 .wrapper .cta {
   display: inline-block;
   text-transform: uppercase;
   font-style: normal;
@@ -196,14 +208,20 @@ nav .nav-links a:hover {
 }
 
 @media screen and (max-width: 900px) {
-  .section-2 {
+  .section-2 .wrapper {
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .section-2 {
     margin: 0 5vh;
   }
 }
 
 .section-3 {
-  padding-top: 10vh;
+  padding: 10vh 0;
+  border-bottom: 1px solid #fff;
 }
 
 .section-3 .title {
@@ -272,7 +290,7 @@ nav .nav-links a:hover {
 }
 
 .section-4 {
-  padding-top: 10vh;
+  padding: 10vh 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,6 +405,10 @@ nav .nav-links a:hover {
   margin-bottom: 2vh;
 }
 
+.section-5 .article .text {
+  padding: 2vh 0;
+}
+
 .section-5 .article .article-title {
   font-style: normal;
   max-width: 400px;
@@ -400,10 +422,191 @@ nav .nav-links a:hover {
   transition: all 0.5s;
 }
 
+.section-5 .article:hover .text {
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
 @media screen and (max-width: 900px) {
   .section-5 {
     margin-left: 0;
     margin: 0 5vh;
   }
+}
+
+.links {
+  padding: 10vh 0;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.links .left .title {
+  text-transform: uppercase;
+  margin-bottom: 15vh;
+}
+
+.links .left .social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.links .left .social-links a {
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
+.links .left .social-links a:hover {
+  opacity: 1;
+}
+
+.links .middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-transform: uppercase;
+  font-style: normal;
+  margin-bottom: 5vh;
+}
+
+.links .middle a {
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.links .middle a:hover {
+  opacity: 1;
+}
+
+.links .right {
+  max-width: 400px;
+}
+
+.links .right .subtitle {
+  font-style: normal;
+  font-size: calc(12px + 2vh);
+  margin-bottom: 1.5rem;
+}
+
+.links .right .text {
+  font-style: normal;
+  opacity: 0.7;
+  margin-bottom: 7vh;
+}
+
+.links .right .form-grp {
+  max-width: 400px;
+  border-bottom: 1px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2vh;
+}
+
+.links .right .form-grp input[type="email"] {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+}
+
+.links .right .form-grp input[type="email"]::-webkit-input-placeholder {
+  text-transform: uppercase;
+}
+
+.links .right .form-grp input[type="email"]:-ms-input-placeholder {
+  text-transform: uppercase;
+}
+
+.links .right .form-grp input[type="email"]::-ms-input-placeholder {
+  text-transform: uppercase;
+}
+
+.links .right .form-grp input[type="email"]::placeholder {
+  text-transform: uppercase;
+}
+
+.links .right .form-grp button {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+}
+
+.links .right .checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.links .right .checkbox #checkb {
+  width: 20px;
+  height: 20px;
+  outline: none;
+  cursor: pointer;
+  background: rgba(40, 40, 40, 0.2);
+  color: black;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  position: relative;
+}
+
+.links .right .checkbox #checkb:checked {
+  background: rgba(40, 40, 40, 0.7);
+}
+
+.links .right .checkbox .checkbox {
+  position: absolute;
+  display: inline-block;
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.links .right .checkbox p {
+  max-width: 360px;
+  font-style: normal;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 900px) {
+  .links {
+    margin-left: 0;
+    margin: 0 5vh;
+  }
+}
+
+.credit {
+  opacity: 0.7;
+  padding: 5vh 0;
+  font-style: normal;
 }
 /*# sourceMappingURL=app.css.map */
