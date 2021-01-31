@@ -412,8 +412,8 @@ nav {
             justify-content: space-between;
             align-items: baseline;
             #checkb {
-                width: 20px;
-                height: 20px;
+                min-width: 20px;
+                min-height: 20px;
                 outline: none;
 
                 cursor: pointer;
@@ -456,4 +456,7 @@ nav {
     padding: 5vh 0;
 
     font-style: normal;
+    @media screen and (max-width: 900px) {
+        margin: 0 5vh;
+    }
 }

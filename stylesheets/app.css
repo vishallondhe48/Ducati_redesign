@@ -564,8 +564,8 @@ nav .nav-links a:hover {
 }
 
 .links .right .checkbox #checkb {
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   outline: none;
   cursor: pointer;
   background: rgba(40, 40, 40, 0.2);
@@ -608,5 +608,11 @@ nav .nav-links a:hover {
   opacity: 0.7;
   padding: 5vh 0;
   font-style: normal;
+}
+
+@media screen and (max-width: 900px) {
+  .credit {
+    margin: 0 5vh;
+  }
 }
 /*# sourceMappingURL=app.css.map */
