@@ -558,35 +558,69 @@ nav .nav-links a:hover {
   text-transform: uppercase;
 }
 
-.links .right .checkbox {
+.links .right .declaration {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.links .right .checkbox #checkb {
-  min-width: 15px;
-  min-height: 15px;
-  outline: none;
+.links .right .declaration .form {
+  margin-top: 4px;
+}
+
+.links .right .declaration .form input#check {
+  position: absolute;
+  opacity: 0;
+}
+
+.links .right .declaration .form input#check:checked + label svg path {
+  stroke-dashoffset: 0;
+}
+
+.links .right .declaration .form input#check:focus + label {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.links .right .declaration .form #check + label {
+  display: block;
+  border: 1px solid #333;
+  width: var(--d);
+  height: var(--d);
   cursor: pointer;
-  background: rgba(40, 40, 40, 0.2);
-  color: black;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-  position: relative;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.links .right .checkbox p {
-  max-width: 340px;
+.links .right .declaration .form #check + label:active {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.links .right .declaration .form #check + label svg {
+  pointer-events: none;
+}
+
+.links .right .declaration .form #check + label svg path {
+  fill: none;
+  stroke: #333;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 101;
+  -webkit-transition: all 350ms cubic-bezier(1, 0, 0.37, 0.91);
+  transition: all 350ms cubic-bezier(1, 0, 0.37, 0.91);
+}
+
+.links .right .declaration .text {
+  max-width: 350px;
   font-style: normal;
   opacity: 0.7;
 }

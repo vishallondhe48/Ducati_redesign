@@ -412,27 +412,57 @@ nav {
                 text-transform: uppercase;
             }
         }
-        .checkbox {
+        .declaration {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            #checkb {
-                min-width: 15px;
-                min-height: 15px;
-                outline: none;
+            align-items: flex-start;
 
-                cursor: pointer;
-                background: rgba(40, 40, 40, 0.2);
-                color: black;
+            .form {
+                margin-top: 4px;
+                input#check {
+                    position: absolute;
+                    opacity: 0;
 
-                appearance: none;
-                border: 1px solid rgba(255, 255, 255, 0.5);
-                border-radius: 4px;
-                position: relative;
+                    &:checked + label svg path {
+                        stroke-dashoffset: 0;
+                    }
+
+                    &:focus + label {
+                        transform: scale(1);
+                    }
+                }
+
+                #check + label {
+                    display: block;
+                    border: 1px solid #333;
+                    width: var(--d);
+                    height: var(--d);
+                    // border-radius: 14px;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+
+                    &:active {
+                        transform: scale(1.05);
+                        // border-radius: 30px;
+                    }
+
+                    svg {
+                        pointer-events: none;
+                        path {
+                            fill: none;
+                            stroke: #333;
+                            stroke-width: 4px;
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                            stroke-dasharray: 100;
+                            stroke-dashoffset: 101;
+                            transition: all 350ms cubic-bezier(1, 0, 0.37, 0.91);
+                        }
+                    }
+                }
             }
-
-            p {
-                max-width: 340px;
+            .text {
+                max-width: 350px;
                 font-style: normal;
                 opacity: 0.7;
             }
